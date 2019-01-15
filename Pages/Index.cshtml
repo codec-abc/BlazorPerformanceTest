@@ -1,0 +1,16 @@
+﻿@page "/"
+
+<div style="position: absolute; top: 0; left: 0; height: 500px; width: 500px; background-color: red" onmousemove="@OnMouseMove">
+    @content
+</div>
+
+@functions {
+    public string content;
+
+    public void OnMouseMove(Microsoft.AspNetCore.Blazor.UIMouseEventArgs e) 
+    {
+        Console.WriteLine("OnMouseMove");
+        content = " " + e.ScreenX + " " + e.ScreenY;
+    }
+}
+
